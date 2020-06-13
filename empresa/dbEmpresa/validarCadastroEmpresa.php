@@ -1,22 +1,31 @@
 <?php
+
 session_start();
-include_once("");
-$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
-$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
-$usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
-$senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
-$senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+
+ $dbhost = "localhost";
+ $dbuser = "root";
+ $dbpass = "";
+ $db = "example";
+
+ $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
 
 
-echo "E-mail: $email <br>";
-echo "Nome: $nome <br>";
-echo "Senha: $senha <br>";
-$result_usuario =  "INSERT INTO usuarios (nome,email,usuario,senha) VALUES ('$nome','$email','$usuario','$senhaHash')";
-$resultado_usuario = mysqli_query($conn, $result_usuario);
-if (mysqli_insert_id($conn)) {
-    $_SESSION['msg'] = "<p style= 'color:green;'>Usuário cadastrado com sucesso!</p>";
-    header("Location: ../index.php#paralogin");
-} else {
-    $_SESSION['msg'] = "<p style= 'color:red;'>Usuário não foi cadastrado com sucesso!</p>";
-    header("Location: ../index.php#paracadastro");
-}
+$empresaNome = filter_input(INPUT_POST, 'empresaNome', FILTER_SANITIZE_STRING);
+$empresaCnpj = filter_input(INPUT_POST, 'empresaCnpj', FILTER_SANITIZE_STRING);
+$empresaEmail = filter_input(INPUT_POST, 'empresaEmail', FILTER_SANITIZE_STRING);
+$empresaSenha = filter_input(INPUT_POST, 'empresaSenha', FILTER_SANITIZE_STRING);
+$empresaCep = filter_input(INPUT_POST, 'empresaCep', FILTER_SANITIZE_STRING);
+
+$sql = "INSERT INTO empresa(empresaNome,empresaCnpj,empresaEmail,empresaSenha,empresaCep)
+                     VALUES ('$empresaNome','$empresaCnpj','$empresaEmail','$empresaSenha', '$empresaCep')";
+
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+    echo "Nome: $empresaNome <br>";
+    echo "empresaCnpj: $empresaCnpj <br>";
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+
+?>

@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `comunidades` (
-  `idComunidade` int(6) NOT NULL,
+  `comunidadeId` int(6) NOT NULL,
   `comunidadeNome` varchar(99) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -43,7 +43,8 @@ CREATE TABLE `doacao` (
   `usuario_id` int(6) DEFAULT NULL,
   `empresa_id` int(6) DEFAULT NULL,
   `comunidade_id` int(6) DEFAULT NULL,
-  `reciclavel_id` int(6) DEFAULT NULL
+  `reciclavel_id` int(6) DEFAULT NULL,
+  `valorDoacao` int(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -53,12 +54,13 @@ CREATE TABLE `doacao` (
 --
 
 CREATE TABLE `empresa` (
-  `idEmpresa` int(6) NOT NULL,
-  `cnpj` varchar(99) NOT NULL,
-  `cep` varchar(99) NOT NULL,
-  `email` varchar(99) NOT NULL,
-  `senha` varchar(99) NOT NULL,
-  `reg_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `empresaID` int(6) NOT NULL,
+  `empresaCnpj` varchar(99) NOT NULL,
+  `empresaNome` varchar(99) NOT NULL,
+  `empresaCEP` varchar(99) NOT NULL,
+  `empresaEmail` varchar(99) NOT NULL,
+  `empresaSenha` varchar(99) NOT NULL,
+  `empresa_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -68,7 +70,7 @@ CREATE TABLE `empresa` (
 --
 
 CREATE TABLE `reciclaveis` (
-  `idReciclavel` int(6) NOT NULL,
+  `reciclavelId` int(6) NOT NULL,
   `reciclavelNome` varchar(99) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -79,14 +81,14 @@ CREATE TABLE `reciclaveis` (
 --
 
 CREATE TABLE `usuario` (
-  `idUsuario` int(6) NOT NULL,
-  `firstName` varchar(30) NOT NULL,
-  `lastName` varchar(30) NOT NULL,
-  `cpf` varchar(99) NOT NULL,
-  `cep` varchar(99) NOT NULL,
-  `email` varchar(99) NOT NULL,
-  `senha` varchar(99) NOT NULL,
-  `reg_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `usuarioId` int(6) NOT NULL,
+  `usuarioNome` varchar(30) NOT NULL,
+  `usuarioSobre` varchar(30) NOT NULL,
+  `usuarioCpf` varchar(99) NOT NULL,
+  `usuarioCep` varchar(99) NOT NULL,
+  `usuarioEmail` varchar(99) NOT NULL,
+  `usuarioSenha` varchar(99) NOT NULL,
+  `usuario_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -97,7 +99,7 @@ CREATE TABLE `usuario` (
 -- Indexes for table `comunidades`
 --
 ALTER TABLE `comunidades`
-  ADD PRIMARY KEY (`idComunidade`);
+  ADD PRIMARY KEY (`comunidadeId`);
 
 --
 -- Indexes for table `doacao`
@@ -112,19 +114,19 @@ ALTER TABLE `doacao`
 -- Indexes for table `empresa`
 --
 ALTER TABLE `empresa`
-  ADD PRIMARY KEY (`idEmpresa`);
+  ADD PRIMARY KEY (`empresaId`);
 
 --
 -- Indexes for table `reciclaveis`
 --
 ALTER TABLE `reciclaveis`
-  ADD PRIMARY KEY (`idReciclavel`);
+  ADD PRIMARY KEY (`reciclavelId`);
 
 --
 -- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`idUsuario`);
+  ADD PRIMARY KEY (`usuarioId`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -134,25 +136,25 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `comunidades`
 --
 ALTER TABLE `comunidades`
-  MODIFY `idComunidade` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `comunidadeId` int(6) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `idEmpresa` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `empresaId` int(6) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `reciclaveis`
 --
 ALTER TABLE `reciclaveis`
-  MODIFY `idReciclavel` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `reciclavelId` int(6) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `usuarioId` int(6) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables

@@ -14,16 +14,16 @@ if ($conn->connect_error) {
 }
 $btnLogin = filter_input(INPUT_POST, 'btnLogin', FILTER_SANITIZE_STRING);
 if ($btnLogin) {
-	$usuarioCpf = filter_input(INPUT_POST, 'usuarioCpf', FILTER_SANITIZE_STRING);
-	$usuarioSenha = filter_input(INPUT_POST, 'usuarioSenha', FILTER_SANITIZE_STRING); 
+	$empresaCnpj = filter_input(INPUT_POST, 'empresaCnpj', FILTER_SANITIZE_STRING);
+	$empresaSenha = filter_input(INPUT_POST, 'empresaSenha', FILTER_SANITIZE_STRING); 
 
-	if ((!empty($usuarioCpf)) AND (!empty($usuarioSenha))) {
-		$result_usuario = "SELECT usuarioCpf, usuarioEmail, usuario_date FROM usuario WHERE usuarioCpf = '$usuarioCpf' LIMIT 1";       
+	if ((!empty($empresaCnpj)) AND (!empty($empresaSenha))) {
+		$result_usuario = "SELECT empresaCnpj, empresaEmail, empresa_date FROM empresa WHERE empresaCnpj = '$empresaCnpj' LIMIT 1";       
         $resultado_usuario = mysqli_query($conn, $result_usuario);
 		if ($resultado_usuario) {
 			$row_usuario = mysqli_fetch_assoc($resultado_usuario);
-                $_SESSION['usuario_date'] = $row_usuario['usuario_date'];
-                $email_teste = $row_usuario['usuario_date'];
+                $_SESSION['empresa_date'] = $row_usuario['empresa_date'];
+                $email_teste = $row_usuario['emrpesa_date'];
 				echo "Hora de registro no sistema: $email_teste ";
 		}
 	} else {

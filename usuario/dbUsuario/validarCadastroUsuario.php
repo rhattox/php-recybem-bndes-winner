@@ -13,20 +13,21 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$firstName = filter_input(INPUT_POST, 'firstName', FILTER_SANITIZE_STRING);
-$lastName = filter_input(INPUT_POST, 'lastName', FILTER_SANITIZE_STRING);
-$cpf = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_STRING);
-$cep = filter_input(INPUT_POST, 'cep', FILTER_SANITIZE_STRING);
-$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
-$senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
+$usuarioNome = filter_input(INPUT_POST, 'usuarioNome', FILTER_SANITIZE_STRING);
+$usuarioSobre = filter_input(INPUT_POST, 'usuarioSobre', FILTER_SANITIZE_STRING);
+$usuarioCpf = filter_input(INPUT_POST, 'usuarioCpf', FILTER_SANITIZE_STRING);
+$usuarioCep = filter_input(INPUT_POST, 'usuarioCep', FILTER_SANITIZE_STRING);
+$usuarioEmail = filter_input(INPUT_POST, 'usuarioEmail', FILTER_SANITIZE_STRING);
+$usuarioSenha = filter_input(INPUT_POST, 'usuarioSenha', FILTER_SANITIZE_STRING);
 
-$sql =  "INSERT INTO usuario (firstName, lastName, cpf, cep, email, senha) VALUES ('$firstName','$lastName','$cpf','$cep','$email','$senha')";
-
+$sql =  "INSERT INTO usuario (usuarioNome, usuarioSobre, usuarioCpf, usuarioCep, usuarioEmail, usuarioSenha)
+                 VALUES ('$usuarioNome','$usuarioSobre','$usuarioCpf','$usuarioCep','$usuarioEmail','$usuarioSenha')";
+echo "E-mail: $usuarioEmail <br>";
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
-    echo "E-mail: $email <br>";
-    echo "Nome: $firstName <br>";
-    echo "Senha: $senha <br>";
+    echo "E-mail: $usuarioEmail <br>";
+    echo "Nome: $usuarioNome <br>";
+    echo "usuarioSenha: $usuarioSenha <br>";
 
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
