@@ -8,5 +8,50 @@
 <body>
     <p>Tela principal empresa</p>
     <h1>Bem-vindo!! Empresa</h1>
+
+
+    <form method="post" action="./dbEmpresaIndex/validarCadastroItem.php">
+        <h1>Login</h1>
+        <p>
+            <label for="cpf usuario">Seu usuário</label>
+            <input id="idPagador" name="usuario" required="required" type="text" placeholder="" />
+        </p>
+
+        <p>
+            <label for="cpnj empresa">Sua senha</label>
+            <input id="senha" name="senha" required="required" type="password" placeholder="" />
+        </p>
+
+        <p>
+            <label for="nome do item">Sua senha</label>
+            <input id="senha" name="senha" required="required" type="password" placeholder="" />
+        </p>
+        <p>
+            <label for="nome da comunidade">Sua senha</label>
+            <input id="senha" name="senha" required="required" type="password" placeholder="" />
+        </p>
+
+        <p>
+            <label for="quantidade do item">Sua senha</label>
+            <input id="senha" name="senha" required="required" type="password" placeholder="" />
+        </p>
+
+        <p>
+            <input type="checkbox" name="manterlogado" id="manterlogado" value="" />
+            <label for="manterlogado">Manter-me logado</label>
+        </p>
+
+        <p>
+            <input type="submit" name="btnLogin" value="Logar" />
+        </p>
+
+        <p class="link">
+            Ainda não tem conta?
+            <a href="#paracadastro">Cadastre-se</a>
+        </p>
+    </form>
+
+
+
 </body>
 </html>
