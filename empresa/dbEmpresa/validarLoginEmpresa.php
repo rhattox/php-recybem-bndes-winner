@@ -18,13 +18,15 @@ if ($btnLogin) {
 	$empresaSenha = filter_input(INPUT_POST, 'empresaSenha', FILTER_SANITIZE_STRING); 
 
 	if ((!empty($empresaCnpj)) AND (!empty($empresaSenha))) {
-		$result_usuario = "SELECT empresaCnpj, empresaEmail, empresa_date FROM empresa WHERE empresaCnpj = '$empresaCnpj' LIMIT 1";       
-        $resultado_usuario = mysqli_query($conn, $result_usuario);
-		if ($resultado_usuario) {
-			$row_usuario = mysqli_fetch_assoc($resultado_usuario);
-                $_SESSION['empresa_date'] = $row_usuario['empresa_date'];
-                $email_teste = $row_usuario['empresa_date'];
-				header("Location: ../postLogin/empresaIndex.html");
+		$result_empresa = "SELECT empresaCnpj, empresaNome, empresaEmail, empresa_date FROM empresa WHERE empresaCnpj = '$empresaCnpj' LIMIT 1";       
+        $resultado_empresa = mysqli_query($conn, $result_empresa);
+		if ($resultado_empresa) {
+			$row_empresa = mysqli_fetch_assoc($resultado_empresa);
+			$_SESSION['empresaId'] = $row_empresa['empresaId'];
+			$_SESSION['empresaNome'] = $row_empresa['empresaNome'];
+			$_SESSION['empresaEmail'] = $row_empresa['empresaEmail'];
+			$_SESSION['empresaCnpj'] = $row_empresa['empresaCnpj'];
+				header("Location: ../postLogin/empresaIndex.php");
 		}
 	} else {
 		$_SESSION['msg'] = "Login e senha incorreto!";

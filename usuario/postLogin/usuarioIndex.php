@@ -1,3 +1,21 @@
+<?php
+session_start();
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "example";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+if (!empty($_SESSION['usuarioId'])) { 
+ echo "sucesso!";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +25,28 @@
     <title>Document</title>
 </head>
 <body>
+
+    <?php
+    if (isset($_SESSION['msg']))
+    echo $_SESSION['msg'];
+    unset($_SESSION['msg']);
+        ?>
     <header class="info">
         
         <img src="../../Imagens/agua_home.jpg">
         <h1 class="welcome">Bem Vindo!</h1>
-        <!--AQUI NOME-->
-        
+       
+           <!--AQUI NOME-->
+           <?php
+            echo "<p> $_SESSION[usuarioNome] </p>";
+            ?>
+    
         <h2>CPF do usuário:</h2>
         <div class="box">
             <!--AQUI CPF-->
+            <?php
+            echo "<p> $_SESSION[usuarioCpf] </p>";
+            ?>
         </div>
         
         <h2>Peso total acumulados:</h2>

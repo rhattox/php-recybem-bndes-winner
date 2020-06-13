@@ -1,3 +1,21 @@
+<?php
+session_start();
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "example";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+if (!empty($_SESSION['empresaId'])) { 
+ echo "sucesso!";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,15 +26,26 @@
     <title>Document</title>
 </head>
 <body>
+    
+    <?php
+    if (isset($_SESSION['msg']))
+    echo $_SESSION['msg'];
+    unset($_SESSION['msg']);
+    ?>
     <header class="info">
         
         <img src="../../Imagens/agua_home.jpg">
         <h1 class="welcome">Bem Vindo!</h1>
         <!--AQUI NOME-->
-        
+        <?php
+            echo "<p> $_SESSION[empresaNome] </p>";
+            ?>
         <h2>CNPJ da Empresa:</h2>
         <div class="box">
             <!--AQUI CNPJ-->
+            <?php
+            echo "<p> $_SESSION[empresaCnpj] </p>";
+            ?>
         </div>
         <div class="formWrapper">
         <h1>Adicionar Peso</h1>
