@@ -5,25 +5,20 @@ session_start();
 <html lang="pt-br">
 
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="css/index.css">
   <title>Index</title>
 </head>
 <body>
-<form method="post" action="">
-        <h1>Login</h1>
-        <p>
-          <label for="usuário">Seu usuário</label>
-          <input id="idPagador" name="usuario" required="required" type="text" placeholder="" />
-        </p>
+<form method="post" action="dbUsuario/validarLoginUsuario.php">
+        
+      <h1>Login</h1>
 
-        <p>
-          <label for="senha">Sua senha</label>
-          <input id="senha" name="senha" required="required" type="password" placeholder="" />
-        </p>
+        <label for="cpf">CPF:</label><br>
+        <input type="text" id="cpf" name="cpf"><br>
+
+        <label for="senha">Senha:</label><br>
+        <input type="text" id="senha" name="senha" require="required"><br>
 
         <p>
           <input type="checkbox" name="manterlogado" id="manterlogado" value="" />
@@ -40,6 +35,4 @@ session_start();
         </p>
       </form>
 </body>
-
-
 </html>
