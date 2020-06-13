@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,24 +8,26 @@
     <link rel="stylesheet" href="../css/signup.css">
     <title>Document</title>
 </head>
+
 <body>
     <div class="main">
         <div class="formWrapper">
-        <h1>Página de cadastro da empresa</h1>
-            <form method= "post" action="dbEmpresa/validarCadastroEmpresa.php">
+            <h1>Página de cadastro da empresa</h1>
+            <form method="post" action="dbEmpresa/validarCadastroEmpresa.php">
                 <label for="empresaNome">Nome da empresa:</label>
                 <input class="inputDefault" type="text" id="empresaNome" name="empresaNome" require="required">
-                <label for="empresaCnpj">empresaCnpj:</label>
+                <label for="empresaCnpj">CNPJ:</label>
                 <input class="inputDefault" type="text" id="empresaCnpj" name="empresaCnpj" require="required">
-                <label for="empresaCep">empresaCep:</label>
+                <label for="empresaCep">cep:</label>
                 <input class="inputDefault" type="text" id="empresaCep" name="empresaCep">
-                <label for="empresaEmail">empresaEmail:</label>
+                <label for="empresaEmail">Email:</label>
                 <input class="inputDefault" type="text" id="empresaEmail" name="empresaEmail" require="required">
                 <label for="empresaSenha">Senha:</label>
                 <input class="inputDefault" type="text" id="empresaSenha" name="empresaSenha" require="required">
                 <input class="button btn_orange" type="submit" value="Fazer cadastro de empresa">
-            </form> 
+            </form>
         </div>
     </div>
 </body>
+
 </html>

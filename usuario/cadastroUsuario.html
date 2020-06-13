@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/signin.css">
+    <link rel="stylesheet" href="../css/signup.css">
     <title>Document</title>
 </head>
 <body>
-    <p>Página de cadastro do usuário</p>
-    <form method= "post" action="dbUsuario/validarCadastroUsuario.php">
-        <label for="usuarioNome">Primeiro nome:</label><br>
-        <input type="text" id="usuarioNome" name="usuarioNome" require="required"><br>
-        <label for="usuarioSobre">Último nome:</label><br>
-        <input type="text" id="usuarioSobre" name="usuarioSobre" require="required"><br>
-        <label for="usuarioCpf">CPF:</label><br>
-        <input type="text" id="usuarioCpf" name="usuarioCpf"><br>
-        <label for="usuarioCep">CEP:</label><br>
-        <input type="text" id="usuarioCep" name="usuarioCep"><br>
-        <label for="usuarioEmail">usuarioEmail:</label><br>
-        <input type="text" id="usuarioEmail" name="usuarioEmail" require="required"><br>
-        <label for="usuarioSenha">Senha:</label><br>
-        <input type="text" id="usuarioSenha" name="usuarioSenha" require="required"><br>
-        <input type="submit" value="Fazer cadastro de usuario">
-      </form> 
+    <div class="main">
+     <div class="formWrapper">
+        <form method= "post" action="dbUsuario/validarCadastroUsuario.php">
+             <h1>Página de cadastro do usuário</h1>
+            <label for="usuarioNome">Primeiro nome:</label>
+            <input class="inputDefault" type="text" id="usuarioNome" name="usuarioNome" require="required">
+            <label for="usuarioSobre">Último nome:</label>
+            <input class="inputDefault" type="text" id="usuarioSobre" name="usuarioSobre" require="required">
+            <label for="usuarioCpf">CPF:</label>
+            <input class="inputDefault" type="text" id="usuarioCpf" name="usuarioCpf">
+            <label for="usuarioCep">Cep:</label>
+            <input class="inputDefault" type="text" id="usuarioCep" name="usuarioCep">
+            <label for="email">Email:</label>
+            <input class="inputDefault" type="text" id="email" name="email" require="required">
+            <label for="usuarioSenha">Senha:</label>
+            <input class="inputDefault" type="text" id="usuarioSenha" name="usuarioSenha" require="required">
+            <input class="button btn_green"type="submit" value="Fazer cadastro de usuario">
+          </form>
+     </div>
+    </div>
 </body>
 </html>

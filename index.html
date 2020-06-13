@@ -1,12 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/modals.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+    <title>index</title>    
+    <script src="https://kit.fontawesome.com/dea90e7a9c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <a href="usuario/usuarioEscolha.html">Para usuários</a>
-    <a href="empresa/empresaEscolha.html">Para empresas</a>
+    <header>
+        <nav>
+            <ul  class="menu">
+                <a href="#"  class="menuItem"><li>A Reciclagem</li></a>
+                <a href="#" class="menuItem"><li>Posso Participar?</li></a>
+            </ul>
+        </nav>
+        <img src="Imagens/Logo.svg" alt="Logo">
+        <h1>RecyBem</h1>
+        <h2>Venha fazer parte desse ciclo do bem!</h2>
+        <div class="buttonWrapper">
+            <a type="button" id="usuario" class="button btn_green" href="#">Sou um Usuário</a>
+            <a id="empresa" class="button btn_orange" href="#">Sou uma Empresa</a>
+        </div>
+        <div id="modal_usuario" class="modal">
+          <div class="modal_content">
+            <span class="modal_close">&times;</span>
+            <h2>Já é cadastrado?</h2>
+            <div class="buttonWrapperModal buttonWrapper">
+                <a class="button btn_green" href="usuario/loginUsuario.html">Sim, sou cadastrado</a>
+                <a class="button btn_green" href="usuario/cadastroUsuario.html">Quero me Cadastrar</a>
+            </div>
+          </div>
+        </div>
+        <div id="modal_empresa" class="modal">
+          <div class="modal_content">
+            <span class="modal_close">&times;</span>
+            <h2>Sua Empresa já é cadastrada?</h2>
+            <div class="buttonWrapperModal buttonWrapper">
+                <a class="button btn_orange" href="empresa/loginEmpresa.html">Já somos cadastrados</a>
+                <a class="button btn_orange" href="empresa/cadastroEmpresa.html">Quero me Cadastrar</a>
+            </div>
+          </div>
+        </div>
+    </header>
+    <main>
+        <h2 class="firstTitle">A Reciclagem</h2>
+        <section class="contentSection">
+        <h2>O que é reciclagem?</h2>
+            
+        <p>
+            A reciclagem é o processo de transformar o lixo que seria jogado fora em algo novamente utilizavel,
+            diminuindo a quantidade de lixo gerado e criando um novo produto no processo.
+        </p>
+        
+        <h2>Por que reciclar?</h2>    
+            
+        <p>
+            Ao reciclar seu lixo você estara ajudando o meio ambiente, gerando novas formas de renda e cuidando 
+            da sua saude e da dos demais.
+        </p>
+        </section>
+        <section>
+        <h2>O que reciclar?</h2>
+        <div class="cardWrapper">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+        
+        </section>
+    </main>
 </body>
+    <script>
+        var modal_1 = document.getElementById("modal_usuario");
+        var btn_1 = document.getElementById("usuario");
+        
+        var modal_2 = document.getElementById("modal_empresa");
+        var btn_2 = document.getElementById("empresa");
+        
+        var span = document.getElementsByClassName("modal_close")[0];
+
+        btn_1.onclick = function() {
+          modal_1.style.display = "flex";
+        }
+        
+        btn_2.onclick = function() {
+          modal_2.style.display = "flex";
+        }
+
+        span.onclick = function() {
+          modal_1.style.display = "none";
+        }
+
+
+        window.onclick = function(event) {
+          if (event.target == modal_1 || event.target == modal_2) {
+            modal_1.style.display = "none";
+            modal_2.style.display = "none";
+          }
+        }
+        
+        
+    </script>
 </html>

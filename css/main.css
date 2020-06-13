@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;900&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-size:16px;
+    font-family:'Roboto', sans-serif;
+    color:#423E3B;
+}
+
+.info{
+    width:35%;
+    position:fixed;
+    left:0;
+    height:100vh;
+    background:#fff;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 5px 2px 15px 0px rgba(138,149,158,0.15);
+    border: 1px solid rgba(138,149,158,0.50);
+    padding:25px;
+    box-sizing:border-box;
+    overflow-y: scroll;
+}
+
+
+.listaComunidades{
+    width:350px;
+    border: 1px solid rgba(138,149,158,0.50);
+    padding:15px auto;
+    border-radius:25px;
+}
+
+.table{
+    display: block;
+    width:350px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.table tbody{
+    margin-top:15px;
+    display: block;
+    text-align: center;
+    width:100%;
+}
+
+.table td{
+    display:block;
+}
+
+.table tr{
+    display:block;
+    width:100%;
+    height:50px;
+    font-size:1.2em;
+    text-align:center;
+}
+
+.info img{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    margin-top:25px;
+}
+
+.welcome{
+    font-size:2.5em;
+    color:hsl(98, 64%, 65%);
+    margin-top:25px;
+}
+
+.info p:nth-child(3){
+    margin-top:15px;
+    margin-bottom:5px;
+}
+
+
+.info h2{
+    align-self:flex-start;
+    font-size:1.2em;
+    margin: 15px 0;
+}
+
+.info h2:nth-last-child(2){
+    align-self:center;
+    margin-top:25px;
+    font-size: 1.5em;
+}
+
+
+.topoMain .box p{
+       font-size:1.2em;
+}
+
+.topoMain p:lastchild{
+       font-size:1.2em;
+}
+
+h2 + .content:last-child{
+   font-size:3em;
+    font-weight:bolder;
+    color:hsl(98, 64%, 65%);
+}
+
+.box{
+    width:70%;
+    height:auto;
+    text-align:center;
+    padding:10px 50px;
+    border-radius: 25px;
+    border: 1px solid hsl(98, 64%, 65%);
+    font-size:2em;
+    font-weight: bold;
+}
+
+.asideMain{
+    margin-left:35%;
+    width:100% - 35%;
+    height: auto;
+    padding:45px;
+    box-sizing: border-box;
+}
+
+.topoMain{
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: flex-start;
+    padding:10px 25px;
+    box-sizing: border-box;
+    margin:0 auto;
+    text-align:center;
+}
+
+.topoMain .content{
+    margin-left: 50px;
+}
+
+.rankingColaboradores{
+    padding:35px;
+    width:90%;
+    
+}
+
+.rankingColaboradores h3{
+    display:block;
+    padding:5px 0;
+    border-bottom:1px solid rgba(138,149,158,0.50);
+}
+
+.rankingColaboradores td{
+    padding:15px;
+    box-sizing:border-box;
+    border:1px solid rgba(138,149,158,0.50);
+}
+
+.rankColaboradores tr{
+    margin:25px 0;
+}
+
+.rankingColaboradores tbody tr td:first-child{
+     width:35%;
+}
+
+.rankingColaboradores tbody tr td:last-child{
+     width:55%;
+}
