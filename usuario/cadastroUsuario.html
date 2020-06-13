@@ -6,15 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Página de cadastro da empresa</p>
-    <form method= "post" action="">
+    <p>Página de cadastro do usuário</p>
+    <form method= "post" action="db/dbInsertUser.php">
         //primeiro nome
-        <label for="companyName">Nome da empresa:</label><br>
-        <input type="text" id="companyName" name="companyName" require="required"><br>
+        <label for="firstName">Primeiro nome:</label><br>
+        <input type="text" id="fristName" name="firstName" require="required"><br>
         //ultimo nome
-        <label for="cnpj">Último nome:</label><br>
-        <input type="text" id="cnpj" name="cnpj" require="required"><br>
-        //CEP
+        <label for="lastName">Último nome:</label><br>
+        <input type="text" id="lastName" name="lastName" require="required"><br>
+        //cpf
+        <label for="cpf">CPF:</label><br>
+        <input type="text" id="cpf" name="cpf"><br>
+        //cep
         <label for="cep">cep:</label><br>
         <input type="text" id="cep" name="cep"><br>
         //email
@@ -24,7 +27,7 @@
         <label for="passWord">Senha:</label><br>
         <input type="text" id="passWord" name="passWord" require="required"><br>
         //botao para enviar o form
-        <input type="submit" value="Fazer cadastro de empresa">
+        <input type="submit" value="Fazer cadastro de usuario">
     
       </form> 
 </body>
