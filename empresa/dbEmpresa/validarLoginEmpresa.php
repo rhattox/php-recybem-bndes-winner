@@ -23,7 +23,7 @@ if ($btnLogin) {
 		if ($resultado_usuario) {
 			$row_usuario = mysqli_fetch_assoc($resultado_usuario);
                 $_SESSION['empresa_date'] = $row_usuario['empresa_date'];
-                $email_teste = $row_usuario['emrpesa_date'];
+                $email_teste = $row_usuario['empresa_date'];
 				echo "Hora de registro no sistema: $email_teste ";
 		}
 	} else {
