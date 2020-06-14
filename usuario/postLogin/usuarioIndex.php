@@ -22,6 +22,11 @@ if (!empty($_SESSION['usuarioId'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/main.css">
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-2.0.3.min.js" type="text/javascript"></script>
+    <!--Script-->
+    <script src="dbUsuarioIndex/scriptTabelaUsuario.js" type="text/javascript"></script>
+    <script src="dbUsuarioIndex/scriptTabelaComunidades.js" type="text/javascript"></script>
     <title>Document</title>
 </head>
 <body>
@@ -35,12 +40,10 @@ if (!empty($_SESSION['usuarioId'])) {
         
         <img src="../../Imagens/agua_home.jpg">
         <h1 class="welcome">Bem Vindo!</h1>
-       
            <!--AQUI NOME-->
            <?php
             echo "<p> $_SESSION[usuarioNome] </p>";
             ?>
-    
         <h2>CPF do usuário:</h2>
         <div class="box">
             <!--AQUI CPF-->
@@ -49,9 +52,18 @@ if (!empty($_SESSION['usuarioId'])) {
             ?>
         </div>
         
-        <h2>Peso total acumulados:</h2>
+        <h2>Peso total acumulados:</h2> 
+        
         <div class="box">
             <!--AQUI PESO-->
+            <?php
+            echo "<p> $_SESSION[soma] KILOS </p>";
+            ?>
+            
+            <form method="post" action="dbUsuarioIndex/validacaoPontos.php">
+               <input class="button btn_green" type="submit" name="btnLogin" value="Atualizar Saldo" />
+               
+             </form>
         </div>
         <h2>Você contribuiu com as comunidades: </h2>
         <div class="listaComunidades">
@@ -76,30 +88,39 @@ if (!empty($_SESSION['usuarioId'])) {
         
     </header>
     <main class="asideMain">        
-        <h2>Ranking de Usuários:</h2>
-            <table id="rankingColaboradores" class="rankingColaboradores">
-            <thead>
-                <tr>
-                    <th>Nome Usuário</th>
-                    <th>Quantidade de pontos acumulados: </th>
-                </tr>
-            </thead>
-                <tbody>
-                 <tr>
-                    <td>William Lima Tavares</td>   
-                    <td>10.000</td>   
-                 </tr>
-                </tbody>
-            </table>
-        <!--<div class="rankingComunidades">
-            <div class="grupoEsquerda">
-                <h3 class="esquerda">Nome da comunidade:</h3>
-                
+    <body onload="carregarItensUsuario()">
+            <div class="ranking">
+                <div class="grupoEsquerda">
+                    <h3 class="esquerda">Ranking dos TOP usuários:</h3>
+                    <table id="minhaTabela">
+                        <caption></caption>
+                        <thead>
+                            <th>Id do usuario</th>
+                            <th>montante reciclado</th>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <div class="grupoDireita">
-                <h3 class="direita">Quantidade(peso) de material coletado:</h3>
+        </body>
+
+        <body onload="carregarItensComunidades()">
+            <div class="ranking">
+                <div class="grupoEsquerda">
+                    <h3 class="esquerda">Ranking das TOP comunidades:</h3>
+                    <table id="minhaTabela">
+                        <caption></caption>
+                        <thead>
+                            <th>id da comunidade</th>
+                            <th>montante reciclado</th>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>-->
+        </body>
     </main>
 </body>
 </html>

@@ -19,7 +19,7 @@ if ($btnLogin) {
 	$usuarioSenha = filter_input(INPUT_POST, 'usuarioSenha', FILTER_SANITIZE_STRING); 
 
 	if ((!empty($usuarioCpf)) AND (!empty($usuarioSenha))) {
-		$result_usuario = "SELECT usuarioCpf, usuarioEmail, usuarioNome, usuario_date FROM usuario WHERE usuarioCpf = '$usuarioCpf' LIMIT 1";       
+		$result_usuario = "SELECT usuarioCpf,usuarioId, usuarioEmail, usuarioNome, usuario_date FROM usuario WHERE usuarioCpf = '$usuarioCpf' LIMIT 1";       
         $resultado_usuario = mysqli_query($conn, $result_usuario);
 		if ($resultado_usuario) {
 			$row_usuario = mysqli_fetch_assoc($resultado_usuario);
@@ -27,7 +27,7 @@ if ($btnLogin) {
 			$_SESSION['usuarioNome'] = $row_usuario['usuarioNome'];
 			$_SESSION['usuarioEmail'] = $row_usuario['usuarioEmail'];
 			$_SESSION['usuarioCpf'] = $row_usuario['usuarioCpf'];
-				header("Location: ../postLogin/usuarioIndex.php");
+			header("Location: ../postLogin/usuarioIndex.php");
 		}
 	} else {
 		$_SESSION['msg'] = "Login e senha incorreto!";
