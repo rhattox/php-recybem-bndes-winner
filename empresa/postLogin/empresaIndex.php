@@ -24,10 +24,14 @@ if (!empty($_SESSION['empresaId'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/mainEmpresa.css">
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-2.0.3.min.js" type="text/javascript"></script>
+    <!--Script-->
+    <script src="dbEmpresaIndex/scriptPesquisaTabela.js" type="text/javascript"></script>
     <title>Document</title>
 </head>
 
-<body>
+<body onload="carregarItens()">
 
     <?php
     if (isset($_SESSION['msg']))
@@ -70,7 +74,7 @@ if (!empty($_SESSION['empresaId'])) {
                     <label for="valorDoacao">Peso: </label>
                     <input class="inputDefault" id="valorDoacao" name="valorDoacao" required="required" type="text" placeholder="Quantidade(Kg)" />
                 </div>
-                
+
                 <input class="button btn_Orange" type="submit" name="btnAdicionar" value="Adicionar" />
             </form>
         </div>
@@ -85,14 +89,20 @@ if (!empty($_SESSION['empresaId'])) {
         </div>
 
         <h2>Ranking de Comunidades:</h2>
-        <table id="ranking" class="ranking">
-            <thead>
-                <tr>
-                    <th>Nome da Comunidade</th>
-                    <th>Quantidade(PesoKG) de material coletado: </th>
-                </tr>
-            </thead>
-            <!--AQUI O RANKING DE COMUNIDADES-->
+        <table id="ranking" class="ranking" >
+			<!--Área que mostrará carregando-->
+			<h4></h4>
+			<!--Tabela-->
+			<table id="minhaTabela">
+				<caption>tabela</caption>
+				<thead>
+					<th>Id do usuario</th>
+					<th>valor da doacao</th>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		<!--AQUI O RANKING DE COMUNIDADES-->
         </table>
         <!--<div class="rankingComunidades">
             <div class="grupoEsquerda">
