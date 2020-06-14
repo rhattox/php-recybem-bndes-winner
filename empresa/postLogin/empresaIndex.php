@@ -10,14 +10,15 @@ $dbname = "example";
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
-if (!empty($_SESSION['empresaId'])) { 
- echo "sucesso!";
+if (!empty($_SESSION['empresaId'])) {
+    echo "sucesso!";
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,21 +26,23 @@ if (!empty($_SESSION['empresaId'])) {
     <link rel="stylesheet" href="../../css/mainEmpresa.css">
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <?php
     if (isset($_SESSION['msg']))
-    echo $_SESSION['msg'];
+        echo $_SESSION['msg'];
     unset($_SESSION['msg']);
     ?>
     <header class="info">
-        
+
         <img src="../../Imagens/agua_home.jpg">
         <h1 class="welcome">Bem Vindo!</h1>
         <!--AQUI NOME-->
         <?php
-            echo "<p> $_SESSION[empresaNome] </p>";
-            ?>
+        echo "<p> $_SESSION[empresaNome] </p>";
+        echo "<p> $_SESSION[empresaId] </p>";
+        ?>
         <h2>CNPJ da Empresa:</h2>
         <div class="box">
             <!--AQUI CNPJ-->
@@ -48,37 +51,41 @@ if (!empty($_SESSION['empresaId'])) {
             ?>
         </div>
         <div class="formWrapper">
-        <h1>Adicionar Peso</h1>
-        <div class="labelWrapper">
-            <label for="cpf">CPF</label>
-              <input class="inputDefault" id="cpf" name="cpf" required="required" type="text" placeholder="Cpf do Colaborador" />
+            <form method="post" action="dbEmpresaIndex/validarCadastroItem.php">
+                <h1>Adicionar Peso</h1>
+                <div class="labelWrapper">
+
+                    <label for="usuarioCpf">CPF</label>
+                    <input class="inputDefault" id="usuarioCpf" name="usuarioCpf" required="required" type="text" placeholder="Cpf do Colaborador" />
+                </div>
+                <div class="labelWrapper">
+                    <label for="comunidadeNome">Comunidade: </label>
+                    <input class="inputDefault" id="comunidadeNome" name="comunidadeNome" required="required" type="text" placeholder="Comunidade Alvo" />
+                </div>
+                <div class="labelWrapper">
+                    <label for="reciclavelNome">Nome do Item: </label>
+                    <input class="inputDefault" id="reciclavelNome" name="reciclavelNome" required="required" type="text" placeholder="Item a ser adicionado" />
+                </div>
+                <div class="labelWrapper">
+                    <label for="valorDoacao">Peso: </label>
+                    <input class="inputDefault" id="valorDoacao" name="valorDoacao" required="required" type="text" placeholder="Quantidade(Kg)" />
+                </div>
+                
+                <input class="button btn_Orange" type="submit" name="btnAdicionar" value="Adicionar" />
+            </form>
         </div>
-      <div class="labelWrapper">
-        <label for="comunidade">Comunidade: </label>
-          <input class="inputDefault" id="comunidade" name="comunidade" required="required" type="password" placeholder="Comunidade Alvo" />
-      </div>
-      <div class="labelWrapper">
-        <label for="item">Nome do Item: </label>
-          <input class="inputDefault" id="item" name="item" required="required" type="password" placeholder="Item a ser adicionado" />
-      </div>
-      <div class="labelWrapper">
-        <label for="peso">Peso: </label>
-          <input class="inputDefault" id="item" name="item" required="required" type="password" placeholder="Quantidade(Kg)" />
-      </div>
-        
-        <input class="button btn_Orange" type="submit" name="btnLogin" value="Adicionar" />
-    </div>
-        
+
+
     </header>
     <main class="asideMain">
-            <h2>Comunidade mais pontuada: </h2>
+        <h2>Comunidade mais pontuada: </h2>
         <div class="topWrapper">
             <p class="content">Vidigal</p>
             <p class="content">1.150.000</p>
         </div>
-        
+
         <h2>Ranking de Comunidades:</h2>
-            <table id="ranking" class="ranking">
+        <table id="ranking" class="ranking">
             <thead>
                 <tr>
                     <th>Nome da Comunidade</th>
@@ -86,7 +93,7 @@ if (!empty($_SESSION['empresaId'])) {
                 </tr>
             </thead>
             <!--AQUI O RANKING DE COMUNIDADES-->
-            </table>
+        </table>
         <!--<div class="rankingComunidades">
             <div class="grupoEsquerda">
                 <h3 class="esquerda">Nome da comunidade:</h3>
@@ -95,7 +102,8 @@ if (!empty($_SESSION['empresaId'])) {
             <div class="grupoDireita">
                 <h3 class="direita">Quantidade(peso) de material coletado:</h3>
             </div>
-        </div>--> 
+        </div>-->
     </main>
 </body>
+
 </html>

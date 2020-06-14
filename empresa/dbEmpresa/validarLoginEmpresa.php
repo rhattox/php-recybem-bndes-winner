@@ -18,7 +18,7 @@ if ($btnLogin) {
 	$empresaSenha = filter_input(INPUT_POST, 'empresaSenha', FILTER_SANITIZE_STRING); 
 
 	if ((!empty($empresaCnpj)) AND (!empty($empresaSenha))) {
-		$result_empresa = "SELECT empresaCnpj, empresaNome, empresaEmail, empresa_date FROM empresa WHERE empresaCnpj = '$empresaCnpj' LIMIT 1";       
+		$result_empresa = "SELECT empresaCnpj, empresaId, empresaNome, empresaEmail, empresa_date FROM empresa WHERE empresaCnpj = '$empresaCnpj' LIMIT 1";       
         $resultado_empresa = mysqli_query($conn, $result_empresa);
 		if ($resultado_empresa) {
 			$row_empresa = mysqli_fetch_assoc($resultado_empresa);
