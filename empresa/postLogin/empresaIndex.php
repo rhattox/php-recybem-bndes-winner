@@ -27,26 +27,17 @@ if (!empty($_SESSION['empresaId'])) {
     <!--jQuery-->
     <script src="https://code.jquery.com/jquery-2.0.3.min.js" type="text/javascript"></script>
     <!--Script-->
-    <script src="dbEmpresaIndex/scriptTabelaUsuario.js" type="text/javascript"></script>
     <script src="dbEmpresaIndex/scriptTabelaComunidades.js" type="text/javascript"></script>
     <title>Document</title>
 </head>
 
-<body>
-
-    <?php
-    if (isset($_SESSION['msg']))
-        echo $_SESSION['msg'];
-    unset($_SESSION['msg']);
-    ?>
+<body onload="carregarTudo()">
     <header class="info">
-
         <img src="../../Imagens/agua_home.jpg">
-        <h1 class="welcome">Bem Vindo!</h1>
+        <h1 class="welcome">Bem-vindo!</h1>
         <!--AQUI NOME-->
         <?php
         echo "<p> $_SESSION[empresaNome] </p>";
-        echo "<p> $_SESSION[empresaId] </p>";
         ?>
         <h2>CNPJ da Empresa:</h2>
         <div class="box">
@@ -82,43 +73,41 @@ if (!empty($_SESSION['empresaId'])) {
 
 
     </header>
-
-
     <main class="asideMain">
 
-        <body onload="carregarItensUsuario()">
-            <div class="ranking">
-                <div class="grupoEsquerda">
-                    <h3 class="esquerda">Ranking dos TOP usuários:</h3>
-                    <table id="minhaTabela">
-                        <caption></caption>
-                        <thead>
-                            <th>Id do usuario</th>
-                            <th>montante reciclado</th>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </body>
+        <section>
+            <h1>PortilloDesign Tutorial JSON + PHP</h1>
+            <!--Área que mostrará carregando-->
+            <h2></h2>
+            <!--Tabela-->
+            <table id="minhaTabelaComunidade">
+                <caption>Cadastro de Jogos</caption>
+                <thead>
+                    <th>ID</th>
+                    <th>Jogo</th>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
 
-        <body onload="carregarItensComunidades()">
-            <div class="ranking">
-                <div class="grupoEsquerda">
-                    <h3 class="esquerda">Ranking das TOP comunidades:</h3>
-                    <table id="minhaTabela">
-                        <caption></caption>
-                        <thead>
-                            <th>id da comunidade</th>
-                            <th>montante reciclado</th>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </body>
+        <section>
+            <h1>PortilloDesign Tutorial JSON + PHP</h1>
+            <!--Área que mostrará carregando-->
+            <h2></h2>
+            <!--Tabela-->
+            <table id="minhaTabelaUsuario">
+                <caption>Cadastro de Jogos</caption>
+                <thead>
+                    <th>ID</th>
+                    <th>Jogo</th>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+
+
     </main>
 </body>
 

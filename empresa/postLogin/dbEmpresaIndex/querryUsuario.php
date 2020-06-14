@@ -15,7 +15,9 @@ if(!$con) {
  echo '}]';
  }else {
  //SQL de BUSCA LISTAGEM
- $sql = "SELECT usuario_id, SUM(valorDoacao) AS somaTotal FROM doacao GROUP BY usuario_id ORDER BY somaTotal DESC";
+ $sql = " SELECT usuario_id,usuario.usuarioNome, SUM(valorDoacao) as somaTotal from doacao,usuario WHERE  usuario_id = usuario.usuarioId
+ GROUP BY usuario_id
+ order by somaTotal DESC";
  $result = mysqli_query($con,$sql); //Executar a SQL
  $n = mysqli_num_rows($result); //Número de Linhas retornadas
 

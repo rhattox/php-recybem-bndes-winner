@@ -15,7 +15,10 @@ if(!$con) {
  echo '}]';
  }else {
  //SQL de BUSCA LISTAGEM
- $sql = "SELECT comunidade_id, SUM(valorDoacao) AS somaTotal FROM doacao GROUP BY comunidade_id ORDER BY somaTotal DESC";
+ $sql = "SELECT comunidade_id,comunidades.comunidadeNome, 
+ SUM(valorDoacao) as somaTotal from doacao,comunidades
+  WHERE comunidade_id = comunidades.comunidadeId 
+  GROUP BY comunidadeId order by somaTotal DESC";
  $result = mysqli_query($con,$sql); //Executar a SQL
  $n = mysqli_num_rows($result); //Número de Linhas retornadas
 
