@@ -27,11 +27,12 @@ if (!empty($_SESSION['empresaId'])) {
     <!--jQuery-->
     <script src="https://code.jquery.com/jquery-2.0.3.min.js" type="text/javascript"></script>
     <!--Script-->
-    <script src="dbEmpresaIndex/scriptPesquisaTabela.js" type="text/javascript"></script>
+    <script src="dbEmpresaIndex/scriptTabelaUsuario.js" type="text/javascript"></script>
+    <script src="dbEmpresaIndex/scriptTabelaComunidades.js" type="text/javascript"></script>
     <title>Document</title>
 </head>
 
-<body onload="carregarItens()">
+<body>
 
     <?php
     if (isset($_SESSION['msg']))
@@ -81,38 +82,43 @@ if (!empty($_SESSION['empresaId'])) {
 
 
     </header>
-    <main class="asideMain">
-        <h2>Comunidade mais pontuada: </h2>
-        <div class="topWrapper">
-            <p class="content">Vidigal</p>
-            <p class="content">1.150.000</p>
-        </div>
 
-        <h2>Ranking de Comunidades:</h2>
-        <table id="ranking" class="ranking" >
-			<!--Área que mostrará carregando-->
-			<h4></h4>
-			<!--Tabela-->
-			<table id="minhaTabela">
-				<caption>tabela</caption>
-				<thead>
-					<th>Id do usuario</th>
-					<th>valor da doacao</th>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
-		<!--AQUI O RANKING DE COMUNIDADES-->
-        </table>
-        <!--<div class="rankingComunidades">
-            <div class="grupoEsquerda">
-                <h3 class="esquerda">Nome da comunidade:</h3>
-                
+
+    <main class="asideMain">
+
+        <body onload="carregarItensUsuario()">
+            <div class="ranking">
+                <div class="grupoEsquerda">
+                    <h3 class="esquerda">Ranking dos TOP usuários:</h3>
+                    <table id="minhaTabela">
+                        <caption></caption>
+                        <thead>
+                            <th>Id do usuario</th>
+                            <th>montante reciclado</th>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <div class="grupoDireita">
-                <h3 class="direita">Quantidade(peso) de material coletado:</h3>
+        </body>
+
+        <body onload="carregarItensComunidades()">
+            <div class="ranking">
+                <div class="grupoEsquerda">
+                    <h3 class="esquerda">Ranking das TOP comunidades:</h3>
+                    <table id="minhaTabela">
+                        <caption></caption>
+                        <thead>
+                            <th>id da comunidade</th>
+                            <th>montante reciclado</th>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>-->
+        </body>
     </main>
 </body>
 

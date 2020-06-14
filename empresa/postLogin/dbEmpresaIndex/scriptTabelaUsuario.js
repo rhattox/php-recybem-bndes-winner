@@ -1,9 +1,9 @@
 /**
 * Capturar itens do banco de dados
 */
-function carregarItens(){
+function carregarItensUsuario(){
 	//variáveis
-	var itens = "", url = "dbEmpresaIndex/pesquisaTabela.php";
+	var itens = "", url = "dbEmpresaIndex/pesquisaTabelaUsuario.php";
 
     //Capturar Dados Usando Método AJAX do jQuery
     $.ajax({
@@ -26,13 +26,13 @@ function carregarItens(){
 			    for(var i = 0; i<retorno.length; i++){
 				    itens += "<tr>";
 				    itens += "<td>" + retorno[i].usuario_id + "</td>";
-				    itens += "<td>" + retorno[i].valorDoacao + "</td>"; 
+				    itens += "<td>" + retorno[i].somaTotal + "</td>"; 
 				    itens += "</tr>";
 			    }
 			    //Preencher a Tabela
 			    $("#minhaTabela tbody").html(itens);		    
 			    //Limpar Status de Carregando
-			    $("h2").html("Carregado");
+			    $("h4").html("Carregado");
 		    }
 	    }
     });
