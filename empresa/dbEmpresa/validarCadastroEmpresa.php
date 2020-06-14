@@ -5,7 +5,7 @@ session_start();
  $dbhost = "localhost";
  $dbuser = "root";
  $dbpass = "";
- $db = "example";
+ $db = "bndes";
 
  $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
 
@@ -21,9 +21,7 @@ $sql = "INSERT INTO empresa(empresaNome,empresaCnpj,empresaEmail,empresaSenha,em
 
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-    echo "Nome: $empresaNome <br>";
-    echo "empresaCnpj: $empresaCnpj <br>";
+  header("Location: ../loginAceitoEmpresa.html");
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }

@@ -4,7 +4,7 @@ session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "example2";
+$dbname = "bndes";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,38 +13,38 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 if (!empty($_SESSION['empresaId'])) {
-    echo "sucesso!";
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/mainEmpresa.css">
-    <!--jQuery-->
     <script src="https://code.jquery.com/jquery-2.0.3.min.js" type="text/javascript"></script>
-    <!--Script-->
-    <script src="dbEmpresaIndex/scriptTabelaComunidades.js" type="text/javascript"></script>
-    <title>Document</title>
+    <script src="dbEmpresaIndex/scriptTabelas.js" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/dea90e7a9c.js" crossorigin="anonymous"></script>
+    <title>Painel</title>
+    <style>
+    
+    
+    </style>
 </head>
-
-<body onload="carregarTudo()">
+<body onload="carregarTodos()">
     <header class="info">
+        <a href="../../index.html"><span class="back"><i class="fas fa-arrow-circle-left"></i></span></a>
+        
         <img src="../../Imagens/agua_home.jpg">
-        <h1 class="welcome">Bem-vindo!</h1>
-        <!--AQUI NOME-->
-        <?php
-        echo "<p> $_SESSION[empresaNome] </p>";
-        ?>
+        <h1 class="welcome">Bem Vindo!</h1>
+        <p><?php echo "$_SESSION[empresaNome] ";?></p>
+        
         <h2>CNPJ da Empresa:</h2>
         <div class="box">
-            <!--AQUI CNPJ-->
-            <?php
-            echo "<p> $_SESSION[empresaCnpj] </p>";
-            ?>
+        <p><?php echo "$_SESSION[empresaCnpj] ";?></p>
+
         </div>
         <div class="formWrapper">
             <form method="post" action="dbEmpresaIndex/validarCadastroItem.php">
@@ -67,48 +67,36 @@ if (!empty($_SESSION['empresaId'])) {
                     <input class="inputDefault" id="valorDoacao" name="valorDoacao" required="required" type="text" placeholder="Quantidade(Kg)" />
                 </div>
 
-                <input class="button btn_Orange" type="submit" name="btnAdicionar" value="Adicionar" />
+                <input class="button btn_orange" type="submit" name="btnLogin" value="Adicionar" />
             </form>
         </div>
-
-
+        
+        
     </header>
     <main class="asideMain">
-
-        <section>
-            <h1>PortilloDesign Tutorial JSON + PHP</h1>
-            <!--Área que mostrará carregando-->
-            <h2></h2>
-            <!--Tabela-->
-            <table id="minhaTabelaComunidade">
-                <caption>Cadastro de Jogos</caption>
+    <h3>Ranking de Comunidade:</h3>
+        <div class="tabelas tabelas_orange">
+            <table class="rankingColaboradores" id="minhaTabelaComunidade">
+                <caption></caption>
                 <thead>
-                    <th>ID</th>
-                    <th>Jogo</th>
+                    <th>Nome</th>
+                    <th>Total</th>
                 </thead>
                 <tbody>
                 </tbody>
             </table>
-        </section>
-
-        <section>
-            <h1>PortilloDesign Tutorial JSON + PHP</h1>
-            <!--Área que mostrará carregando-->
-            <h2></h2>
-            <!--Tabela-->
-            <table id="minhaTabelaUsuario">
-                <caption>Cadastro de Jogos</caption>
+        </div>
+            <h3>Ranking de Usuario:</h3>
+        <div class="tabelas tabelas_orange">
+            <table class="rankingColaboradores" id="minhaTabelaUsuario">
                 <thead>
-                    <th>ID</th>
-                    <th>Jogo</th>
+                    <th>Nome</th>
+                    <th>Total</th>
                 </thead>
                 <tbody>
                 </tbody>
             </table>
-        </section>
-
-
+        </div>
     </main>
 </body>
-
 </html>

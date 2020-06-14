@@ -4,7 +4,7 @@ session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "example2";
+$dbname = "bndes";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -26,6 +26,7 @@ if ($btnLogin) {
 			$_SESSION['empresaNome'] = $row_empresa['empresaNome'];
 			$_SESSION['empresaEmail'] = $row_empresa['empresaEmail'];
 			$_SESSION['empresaCnpj'] = $row_empresa['empresaCnpj'];
+			$_SESSION['empresa_date'] = $row_empresa['empresa_date'];
 				header("Location: ../postLogin/empresaIndex.php");
 		}
 	} else {

@@ -3,6 +3,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -17,7 +18,7 @@ session_start();
       <form method="post" action="dbUsuario/validarLoginUsuario.php">
         <h1>Login</h1>
         <div class="labelWrapper">
-            <label for="usuarioCpf">Seu usuário</label>
+            <label for="usuarioCpf">Seu CPF</label>
             <input class="inputDefault" id="usuarioCpf" name="usuarioCpf" required="required" type="text" placeholder="" />
         </div>
       <div class="labelWrapper">

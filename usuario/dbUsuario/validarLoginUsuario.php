@@ -4,7 +4,7 @@ session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "example2";
+$dbname = "bndes";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -27,6 +27,7 @@ if ($btnLogin) {
 			$_SESSION['usuarioNome'] = $row_usuario['usuarioNome'];
 			$_SESSION['usuarioEmail'] = $row_usuario['usuarioEmail'];
 			$_SESSION['usuarioCpf'] = $row_usuario['usuarioCpf'];
+			$_SESSION['usuario_date'] = $row_usuario['usuario_date'];
 			header("Location: ../postLogin/usuarioIndex.php");
 		}
 	} else {

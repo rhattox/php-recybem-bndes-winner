@@ -4,7 +4,7 @@ session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "example";
+$dbname = "bndes";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -24,10 +24,8 @@ $sql =  "INSERT INTO usuario (usuarioNome, usuarioSobre, usuarioCpf, usuarioCep,
                  VALUES ('$usuarioNome','$usuarioSobre','$usuarioCpf','$usuarioCep','$usuarioEmail','$usuarioSenha')";
 echo "E-mail: $usuarioEmail <br>";
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-    echo "E-mail: $usuarioEmail <br>";
-    echo "Nome: $usuarioNome <br>";
-    echo "usuarioSenha: $usuarioSenha <br>";
+  header("Location: ../loginAceitoUsuario.html");
+
 
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

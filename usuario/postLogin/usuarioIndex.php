@@ -4,7 +4,7 @@ session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "example2";
+$dbname = "bndes";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,117 +13,92 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 if (!empty($_SESSION['usuarioId'])) {
-    echo "sucesso!";
+    
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/main.css">
-    <!--jQuery-->
     <script src="https://code.jquery.com/jquery-2.0.3.min.js" type="text/javascript"></script>
-    <!--Script-->
-    <script src="dbUsuarioIndex/scriptTabelaUsuario.js" type="text/javascript"></script>
-    <script src="dbUsuarioIndex/scriptTabelaComunidades.js" type="text/javascript"></script>
-    <title>Document</title>
+    <script src="dbUsuarioIndex/scriptTabelas.js" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/dea90e7a9c.js" crossorigin="anonymous"></script>
+    <title>Painel</title>
+    <style>
+        .back:hover{
+                color:hsl(98, 64%, 65%);
+        }
+    </style>
 </head>
-
-<body onload="javascript:carregarItensComunidade();carregarItensUsuario()">
-
-    <?php
-    if (isset($_SESSION['msg']))
-        echo $_SESSION['msg'];
-    unset($_SESSION['msg']);
-    ?>
+<body onload="carregarTodos()">
+<!--PARTE DA ESQUERDA DA PÁGINA-->
     <header class="info">
-
+        <a href="../../index.html"><span class="back"><i class="fas fa-arrow-circle-left"></i></span></a>
         <img src="../../Imagens/agua_home.jpg">
         <h1 class="welcome">Bem Vindo!</h1>
-        <!--AQUI NOME-->
-        <?php
-        echo "<p> $_SESSION[usuarioNome] </p>";
-        ?>
+        <p><?php echo "$_SESSION[usuarioNome] ";?></p>
+        
         <h2>CPF do usuário:</h2>
         <div class="box">
-            <!--AQUI CPF-->
-            <?php
-            echo "<p> $_SESSION[usuarioCpf] </p>";
-            ?>
+        <p><?php echo "$_SESSION[usuarioCpf] ";?></p>
         </div>
-
-        <h2>Peso total acumulados:</h2>
-
+        
+        <h2>Email:</h2>
         <div class="box">
-            <!--AQUI PESO-->
-            <?php
-            echo "<p> $_SESSION[soma] KILOS </p>";
-            ?>
-
-            <form method="post" action="dbUsuarioIndex/validacaoPontos.php">
-                <input class="button btn_green" type="submit" name="btnLogin" value="Atualizar Saldo" />
-
-            </form>
+        <p><?php echo "$_SESSION[usuarioEmail] ";?></p>
         </div>
-        <h2>Você contribuiu com as comunidades: </h2>
-        <div class="listaComunidades">
-            <table class="table">
+        
+         <h2>Coloaborador desde:</h2>
+        <div class="box">
+        <p><?php echo "$_SESSION[usuario_date] ";?></p>
+        </div>
+        
+        <p class="endP">
+         *O BNDES está com você nessa iniciativa! O valor correspondete de cada coleta será replicado 3x pelo Banco. 
+        </p>
+    </header>    
+    <!--FIM DA PARTE DA ESQUERDA DA PÁGINA-->
+    
+    <!--PARTE DA DIREITA DA PÁGINA-->
+    <main class="asideMain">      
+        
+        <h3>Ranking de Comunidade:</h3>
+        <div class="tabelas">
+            <table class="rankingColaboradores" id="minhaTabelaComunidade">
+                <caption></caption>
+                <thead>
+                    <th>Nome</th>
+                    <th>Total</th>
+                </thead>
                 <tbody>
-                    <tr>
-                        <td>Vidigal</td>
-                    </tr>
-                    <tr>
-                        <td>Jacarézinho</td>
-                    </tr>
-                    <tr>
-                        <td>Cidade de Deus</td>
-                    </tr>
-                    <tr>
-                        <td>Centenário</td>
-                    </tr>
-
                 </tbody>
             </table>
         </div>
-
-    </header>
-    <main class="asideMain">
-        <div >
-            <div class="ranking">
-                <div class="grupoEsquerda">
-                    <h3 class="esquerda">Ranking dos TOP usuários:</h3>
-                    <table id="minhaTabelaUsuario">
-                        <caption></caption>
-                        <thead>
-                            <th>Usuario</th>
-                            <th>Kg Totais</th>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            <h3>Ranking de Usuario:</h3>
+        <div class="tabelas">
+            
+            <table class="rankingColaboradores" id="minhaTabelaUsuario">
+                <thead>
+                    <th>Nome</th>
+                    <th>Total</th>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
-
-        <div onload="carregarItensComunidades()">
-            <div class="ranking">
-                <div class="grupoEsquerda">
-                    <h3 class="esquerda">Ranking das TOP comunidades:</h3>
-                    <table id="minhaTabelaComunidade">
-                        <caption></caption>
-                        <thead>
-                            <th>id da comunidade</th>
-                            <th>montante reciclado</th>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
+        <!--<div class="rankingComunidades">
+            <div class="grupoEsquerda">
+                <h3 class="esquerda">Nome da comunidade:</h3>
+                
             </div>
-        </div>
+            <div class="grupoDireita">
+                <h3 class="direita">Quantidade(peso) de material coletado:</h3>
+            </div>
+        </div>-->
     </main>
+    <!--FIM DA PARTE DA DIREITA DA PÁGINA-->
 </body>
-
 </html>

@@ -88,3 +88,17 @@ label{
 .btn_green:hover{
     border:2px solid #b7e99b;
 }
+
+.botoesForm{
+    width:50%;
+    margin: 0 auto;
+    padding:10px 25px;
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.botoesForm input{
+    font-weight:bolder;
+}

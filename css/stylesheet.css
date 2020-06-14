@@ -25,9 +25,9 @@ header{
 }
 
 .menuItem{
-    margin-right:35px;
+    margin-right:15px;
     margin-top:15px;
-    font-size:1.2em;
+    font-size:1.1em;
     font-weight: bold;
     box-sizing:border-box;
     transition: border .2s ease-out;
@@ -53,12 +53,11 @@ nav{
     justify-content: flex-end;
     padding: 0 15px;
     list-style-type: none;
-    margin:0 50px;
+    margin:0px;
 }
 
 header img{
-    height:18vh;
-    margin-top:5vh;
+    height:25vh;
 }
 
 header h1{
@@ -111,4 +110,238 @@ header h2{
 
 .btn_orange:hover{
     border:2px solid #F29164;
+}
+
+/*********************************************************/
+/*                  Sábado 18:25                        */
+
+.firstTitle{
+    font-size:4em;
+    margin-left:80px;
+    margin-top:55px;
+}
+
+
+.contentSection{
+    display:flex;
+    flex-direction:row;
+}
+
+.contentWrapper{
+    padding: 25px 80px;
+    width:50%;
+    margin-top:15px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:Flex-start;
+}
+
+
+.contentWrapper h2{
+    font-size:2em;
+}
+
+
+.contentWrapper p{
+    margin-top:50px;
+    text-justify: inter-word;
+    text-align: justify;
+    font-size:1.5em;
+    line-height: 2;
+}
+
+.cardSection{
+    background:#e0e0e0;
+    padding-top:55px;
+}
+
+.cardSection h2{
+    margin-left: 80px;
+    font-size:2em;
+}
+
+.cardWrapper{
+    width:100%;
+    height:auto;
+    padding: 35px 0;
+    display:flex;
+    flex-direction:row;
+    flex-flow: wrap;
+    align-items:center;
+    justify-content: space-around;
+}
+
+.card{
+    width:15%;
+    margin: 50px 7%;
+    height: 200px;
+    background: #fff;
+    border-radius:15px;
+     box-shadow: 0px 4px 8px rgba(138,149,158,0.15);
+    border: 1px solid #e0e0e0e0;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:flex-start;
+    color:#fff;
+    font-size:1.5em;
+}
+
+.card p{
+    margin-top:25px;
+}
+
+.card img{
+    height:80px;
+    margin-top:25px;
+}
+
+.card:first-child{
+    border:5px solid #ff4f4f;
+    box-sizing:border-box;
+    background:#423E3B;
+}
+
+.card:nth-child(2){
+    border:5px solid #c6d0d0;
+    box-sizing:border-box;
+    background:#423E3B;
+}
+
+.card:nth-child(3){
+    border:5px solid #2baa7c;
+    box-sizing:border-box;
+    background:#423E3B;
+}
+
+.card:nth-child(4){
+    border:5px solid #a542c9;
+    box-sizing:border-box;
+    background:#423E3B;
+}
+
+.card:nth-child(5){
+    border: 5px solid #f0c950;
+    box-sizing:border-box;
+    background:#423E3B;
+}
+
+.card:nth-child(6){
+    border:5px solid #2dbfe2;
+    box-sizing:border-box;
+    background:#423E3B;
+}
+
+.missionWrapper{
+    box-sizing:border-box;
+    width:100%;
+    height:auto;
+    padding: 35px 0 35px 80px;
+    background:#423E3B;
+    color:#fff;
+}
+
+.missionWrapper .texto{
+    line-height:1.5;
+    display:flex;
+    flex-direction:column;
+    align-items: flex-start;
+    justify-content: space-around;
+    width:80%;
+    margin-top: 25px;
+    font-size:1.5em;
+}
+
+.texto p{
+    margin-top:15px;
+}
+
+.texto p strong:first-child{
+    color:#a1ea77;
+}
+
+.texto p strong:last-child{
+    color:#F29164;
+}
+
+.missionWrapper .btn{
+    width:100%;
+    height:auto;
+    margin-top:10px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.missionWrapper .button{
+    margin-right:80px;
+}
+
+.missionWrapper .button:hover{
+    color:#fff;
+}
+
+
+.missionWrapper h2{
+    font-size:3em;
+}
+
+.bndesWrapper{
+    height:auto;
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-around;
+    width:100%;
+    background:#1d318d;
+    color:#fff;
+    padding:15px;
+    box-sizing: border-box;
+}
+
+.bndesWrapper .contentWrapper{
+    width:40%;
+}
+
+.bndesWrapper .contentWrapper h2{
+    font-size:2.4em;
+}
+
+.bndesWrapper .contentWrapper p{
+    font-size:1.3em;
+    line-height: 1.5;
+}
+
+.bndesWrapper img{
+    display:block;
+    height:250px;
+}
+
+.endWrapper{
+    width:100%;
+    height:100vh;
+    padding:80px;
+    box-sizing: border-box;
+    Background:#423E3B;
+    color:#fff;
+}
+
+.endWrapper h2{
+    font-size: 3em;
+    margin-bottom:50px;
+}
+
+.endWrapper p{
+    font-size:2em;
+    text-align: justify;
+}
+
+.endWrapper strong{
+    color: #a1ea77;
+}
+
+.endWrapper .buttonWrapper a:hover{
+    color:#fff;
 }

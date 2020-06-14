@@ -1,6 +1,4 @@
-.info .box p{
-    color:#F29164;
-}
+
 
 .info .box{
     border: 1px solid #F29164;
@@ -13,6 +11,10 @@
 .info{
     overflow-y:scroll;
     overflow-x:hidden;
+}
+
+.asideMain h2{
+    border-color:#F29164;
 }
 
 .topWrapper p:last-child{
@@ -30,9 +32,9 @@
     font-weight: bold;
 }
 
-.ranking
-    padding:35px;
-    width:90%;
+.ranking{
+    padding:15px;
+    width:100%;
 }
 
 .ranking h3{
@@ -173,4 +175,8 @@
     color:hsl(98, 53%, 63%);
     text-decoration:none;
     font-weight:bold;
+}
+
+.tabelas_orange{
+    border-color: #F29164;
 }

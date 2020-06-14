@@ -1,15 +1,11 @@
 <?php
 session_start();
 
-if (isset($_SESSION['msg']))
-    echo $_SESSION['msg'];
-unset($_SESSION['msg']);
-
 
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
-$db = "example";
+$db = "bndes";
 
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $db) or die("Connect failed: %s\n" . $conn->error);
 
@@ -50,19 +46,14 @@ if (!empty($reciclavelNome)) {
         echo "papel: $_SESSION[reciclavelId]";
     }
 }
-echo " $_SESSION[empresaId]";
-echo " $valorDoacao";
-
-
 
 $sql = "INSERT INTO doacao(usuario_id,empresa_id,comunidade_id,reciclavel_id,valorDoacao)
               VALUES ('$_SESSION[usuarioId]','$_SESSION[empresaId]','$_SESSION[comunidadeId]','$_SESSION[reciclavelId]','$valorDoacao')";
 
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-    echo "<br><br>$_SESSION[usuarioId]','$_SESSION[empresaId]','$_SESSION[comunidadeId]','$_SESSION[reciclavelId]','$valorDoacao'";
-    
+    header("Location: ../empresaIndex.php");
+
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
