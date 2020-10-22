@@ -65,3 +65,13 @@ volumes:
       o: bind
       device: "/opt/docker/volumes/recybem-bndes/db"
 ````
+
+.env
+````
+PORT_PHP=1000
+PORT_ADMINER=1001
+VERSION_MYSQL=8.0.22
+DB_NAME=bndes
+DB_USER=root
+DB_PASSWORD=example
+````
