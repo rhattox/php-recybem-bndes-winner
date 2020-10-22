@@ -17,3 +17,34 @@ Grupo:
 
 Para a utilização de forma rápida e prática, estou disponibilizando este método feito por mim para facilitar a instalação do aplicativo desde que já tenha o docker.
 
+docker-compose.yml
+````
+
+version: '3.7'
+services:
+    app:
+      image: php-mysqli:latest
+      restart: always
+      depends_on:
+        - db
+      volumes:
+        - /opt/docker/volumes/recybem-bndes/app:/var/www/html
+      ports:
+        - 1000:80
+    db:
+      image: mysql:latest
+      restart: always
+      volumes:
+        - /opt/docker/volumes/recybem-bndes/db:/var/lib/mysql
+      environment:
+        MYSQL_DATABASE: bndes
+        MYSQL_USER: root
+        MYSQL_ROOT_PASSWORD: example
+    adminer:
+      image: adminer
+      restart: always
+      ports:
+        - 1001:8080
+      depends_on:
+        - db
+        ````
