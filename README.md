@@ -21,7 +21,7 @@ Recybem é um aplicação desenvolvida durante o hackthon e tem como objetivo o 
 
 #### Interface
 
-![](https://drive.google.com/file/d/1Gxd8Kjx1su-7P-xIySPNSyK-vXWCCTo-/view?usp=sharing)
+![Alt Text](https://1drv.ms/u/s!Ai6kxBp8uUNsjUBq3vrdVfIa2GrI?e=I8modm)
 
 # Como utilizar?
 
