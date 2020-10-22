@@ -6,10 +6,10 @@ Link do Hackathon: https://devpost.com/software/recybem
 Link do vídeo no youtube: https://www.youtube.com/watch?v=pHCKWjfo_Ds&feature=emb_title
 
 Grupo: 
-  Bruno Coviello Souto: https://www.linkedin.com/in/bruno-coviello-souto-8771371b6/
-  Victor:
-  Willian: 
-  Rafaela:
+Bruno Coviello Souto: https://www.linkedin.com/in/bruno-coviello-souto-8771371b6/
+Victor:
+Willian: 
+Rafaela:
 
 # Como utilizar?
 
