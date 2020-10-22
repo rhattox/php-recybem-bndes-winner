@@ -19,7 +19,6 @@ Para a utilização de forma rápida e prática, estou disponibilizando este mé
 
 docker-compose.yml
 ````
-
 version: '3.7'
 services:
     app:
@@ -47,4 +46,4 @@ services:
         - 1001:8080
       depends_on:
         - db
-        ````
+````
