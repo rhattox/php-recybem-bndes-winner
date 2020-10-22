@@ -34,23 +34,34 @@ services:
       depends_on:
         - db
       volumes:
-        - /opt/docker/volumes/recybem-bndes/app:/var/www/html
+        - app:/var/www/html
       ports:
-        - 1000:80
+        - ${PORT_PHP}:80
     db:
-      image: mysql:latest
+      image: mysql:${VERSION_MYSQL}
       restart: always
       volumes:
-        - /opt/docker/volumes/recybem-bndes/db:/var/lib/mysql
+        - db:/var/lib/mysql
       environment:
-        MYSQL_DATABASE: bndes
-        MYSQL_USER: root
-        MYSQL_ROOT_PASSWORD: example
+        MYSQL_DATABASE: ${DB_NAME}
+        MYSQL_USER: ${DB_USER}
+        MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
     adminer:
       image: adminer
       restart: always
       ports:
-        - 1001:8080
+        - ${PORT_ADMINER}:8080
       depends_on:
         - db
+volumes:
+  app:  
+    driver_opts:
+      type: none
+      o: bind
+      device: "/opt/docker/volumes/recybem-bndes/app"
+  db:  
+    driver_opts:
+      type: none
+      o: bind
+      device: "/opt/docker/volumes/recybem-bndes/db"
 ````
