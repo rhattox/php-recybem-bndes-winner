@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-$servername = "localhost";
+$servername = "db";
 $username = "root";
-$password = "";
+$password = "example";
 $dbname = "bndes";
 
 // Create connection

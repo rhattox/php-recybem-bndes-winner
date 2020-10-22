@@ -2,9 +2,9 @@
 session_start();
 
 
-$dbhost = "localhost";
+$dbhost = "db";
 $dbuser = "root";
-$dbpass = "";
+$dbpass = "example";
 $db = "bndes";
 
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $db) or die("Connect failed: %s\n" . $conn->error);

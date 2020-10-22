@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-$servername = "localhost";
+$servername = "db";
 $username = "root";
-$password = "";
+$password = "example";
 $dbname = "bndes";
 
 // Create connection
@@ -13,7 +13,6 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 $btnLogin = filter_input(INPUT_POST, 'btnLogin', FILTER_SANITIZE_STRING);
-echo "$btnLogin";
 if ($btnLogin) {
 	$usuarioCpf = filter_input(INPUT_POST, 'usuarioCpf', FILTER_SANITIZE_STRING);
 	$usuarioSenha = filter_input(INPUT_POST, 'usuarioSenha', FILTER_SANITIZE_STRING); 
