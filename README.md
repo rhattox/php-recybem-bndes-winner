@@ -17,6 +17,13 @@ Grupo:
 
 Para a utilização de forma rápida e prática, estou disponibilizando este método feito por mim para facilitar a instalação do aplicativo desde que já tenha o docker.
 
+Dockerfile
+
+````
+FROM php:apache
+RUN docker-php-ext-install mysqli
+````
+
 docker-compose.yml
 ````
 version: '3.7'
