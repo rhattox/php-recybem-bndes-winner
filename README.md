@@ -6,10 +6,22 @@ Link do Hackathon: https://devpost.com/software/recybem
 Link do vídeo no youtube: https://www.youtube.com/watch?v=pHCKWjfo_Ds&feature=emb_title
 
 Grupo: 
+
 Bruno Coviello Souto: https://www.linkedin.com/in/bruno-coviello-souto-8771371b6/
+
 Victor:
+
 Willian: 
+
 Rafaela:
+
+# O que é?
+
+Recybem é um aplicação desenvolvida durante o hackthon e tem como objetivo o saneamento nas comunidades.
+
+#### Interface
+
+![](https://drive.google.com/file/d/1Gxd8Kjx1su-7P-xIySPNSyK-vXWCCTo-/view?usp=sharing)
 
 # Como utilizar?
 
