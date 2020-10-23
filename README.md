@@ -19,6 +19,9 @@ Rafaela:
 
 Recybem é um aplicação desenvolvida durante o hackthon e tem como objetivo o saneamento nas comunidades.
 
+![Alt Text](https://github.com/bcovies/recybem-bndes/blob/master/gifs/main.png)
+
+
 #### Interface
 
 ![Alt Text](https://github.com/bcovies/recybem-bndes/blob/master/gifs/Index.gif)
