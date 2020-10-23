@@ -22,10 +22,8 @@ $usuarioSenha = filter_input(INPUT_POST, 'usuarioSenha', FILTER_SANITIZE_STRING)
 
 $sql =  "INSERT INTO usuario (usuarioNome, usuarioSobre, usuarioCpf, usuarioCep, usuarioEmail, usuarioSenha)
                  VALUES ('$usuarioNome','$usuarioSobre','$usuarioCpf','$usuarioCep','$usuarioEmail','$usuarioSenha')";
-echo "E-mail: $usuarioEmail <br>";
 if ($conn->query($sql) === TRUE) {
   header("Location: ../loginAceitoUsuario.html");
-
 
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
