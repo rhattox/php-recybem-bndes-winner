@@ -24,8 +24,17 @@ Recybem é um aplicação desenvolvida durante o hackthon e tem como objetivo o 
 
 
 #### Interface
+Interfaces gráficas da aplicação:
 
-![Alt Text](https://github.com/bcovies/recybem-bndes/blob/master/gifs/Index.gif)
+#### Login do usuário 
+![Alt Text](https://github.com/bcovies/recybem-bndes/blob/master/gifs/usuarioLogin.gif)
+
+#### Login da empresa
+![Alt Text](https://github.com/bcovies/recybem-bndes/blob/master/gifs/empresaLogin.gif)
+
+#### Adminer para contato com banco de dados de forma acessível
+![Alt Text](https://github.com/bcovies/recybem-bndes/blob/master/gifs/admin-db.gif)
+![Alt Text](https://github.com/bcovies/recybem-bndes/blob/master/gifs/adminer-base.gif)
 
 # Como utilizar?
 
