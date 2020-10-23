@@ -20,21 +20,27 @@ Rafaela:
 Recybem é um aplicação desenvolvida durante o hackthon e tem como objetivo o saneamento nas comunidades.
 
 
-<img src="https://github.com/bcovies/recybem-bndes/blob/master/gifs/main.png" width="355.5" height="211">
+<img src="https://github.com/bcovies/recybem-bndes/blob/master/gifs/main.png" zoom="0.5">
 
 
 #### Interface
+
 Interfaces gráficas da aplicação:
 
 #### Login do usuário 
-![Alt Text](https://github.com/bcovies/recybem-bndes/blob/master/gifs/usuarioLogin.gif)
+
+<img src="https://github.com/bcovies/recybem-bndes/blob/master/gifs/usuarioLogin.gif" zoom="0.5">
 
 #### Login da empresa
-![Alt Text](https://github.com/bcovies/recybem-bndes/blob/master/gifs/empresaLogin.gif)
+
+<img src="https://github.com/bcovies/recybem-bndes/blob/master/gifs/empresaLogin.gif" zoom="0.5">
 
 #### Adminer para contato com banco de dados de forma acessível
-![Alt Text](https://github.com/bcovies/recybem-bndes/blob/master/gifs/admin-db.gif)
-![Alt Text](https://github.com/bcovies/recybem-bndes/blob/master/gifs/adminer-base.gif)
+
+<img src="https://github.com/bcovies/recybem-bndes/blob/master/gifs/admin-db.gif" zoom="0.5">
+
+#### Adminer para contato com banco de dados de forma acessível
+<img src="https://github.com/bcovies/recybem-bndes/blob/master/gifs/adminer-base.gif" zoom="0.5">
 
 # Como utilizar?
 
