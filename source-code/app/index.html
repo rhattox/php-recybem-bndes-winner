@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>    
+    
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <ul  class="menu">
+                <a href="#reciclagem"  class="menuItem"><li>A Reciclagem</li></a>
+                <a href="#endWrapper" class="menuItem"><li>Posso Participar?</li></a>
+                <a href="quem_somos.html"  class="menuItem"><li>Quem Somos</li></a>
+            </ul>
+        </nav>
+        <img src="Imagens/Logo_final.png" alt="Logo">
+        <h1>RecyBem</h1>
+        <h2>Venha fazer parte desse ciclo do bem!</h2>
+        <div class="buttonWrapper">
+            <a type="button" id="usuario" class="button btn_green" href="#">Sou um Usuário</a>
+            <a id="empresa" class="button btn_orange" href="#">Sou uma Empresa</a>
+        </div>
+        <div id="modal_usuario" class="modal">
+          <div class="modal_content">
+            <span class="modal_close">&times;</span>
+            <h2>Já é cadastrado?</h2>
+            <div class="buttonWrapperModal buttonWrapper">
+                <a class="button btn_green" href="usuario/loginUsuario.php">Sim, sou cadastrado</a>
+                <a class="button btn_green" href="usuario/cadastroUsuario.html">Quero me Cadastrar</a>
+            </div>
+          </div>
+        </div>
+        <div id="modal_empresa" class="modal">
+          <div class="modal_content">
+            <span class="modal_close">&times;</span>
+            <h2>Sua Empresa já é cadastrada?</h2>
+            <div class="buttonWrapperModal buttonWrapper">
+                <a class="button btn_orange" href="empresa/loginEmpresa.php">Já somos cadastrados</a>
+                <a class="button btn_orange" href="empresa/cadastroEmpresa.html">Quero me Cadastrar</a>
+            </div>
+          </div>
+        </div>
+    </header>
+    <main>
+        <h1 id="reciclagem" class="firstTitle">A Reciclagem</h1>
+        <section class="contentSection">
+        <div class="contentWrapper">
+            <h2>O Que é Reciclagem?</h2>
+        <p>
+            A reciclagem é o processo de transformar o lixo que seria jogado fora em algo novamente utilizavel,
+            diminuindo a quantidade de lixo gerado e criando um novo produto no processo.
+        </p>
+        </div>
+        
+        <div class="contentWrapper">
+        <h2>Por Que Reciclar?</h2>    
+            
+        <p>
+            Ao reciclar seu lixo você estara ajudando o meio ambiente, gerando novas formas de renda e cuidando 
+            da sua saude e da dos demais.
+        </p>
+        </div>
+        </section>
+        <section class="missionWrapper">
+            <h2>Nossa Missão</h2>
+            <div class="texto">
+            <p>Nosso objetivo é conectar as pessoas que se solidarizam com a situação nas comunidades às organizações que de fato podem ajudá-las.</p>
+            
+            <p>Conectando assim, <strong>quem quer</strong> ajudar e quem <strong>pode ajudar</strong>.</p>
+            </div>
+            <div class="btn">
+            <a class="button btn_green" href="quem_somos.html">
+            Nos Conheça Melhor</a>
+            </div>
+        
+        </section>
+        <!--<section class="cardSection">
+            
+         <h2>O Que Reciclar?</h2>
+        <div class="cardWrapper">
+            <div class="card">
+                <p>Plástico</p>
+                <img src="Imagens/plastico.png">
+            </div>
+            <div class="card">
+                <p>Isopor</p>
+                <img src="Imagens/Isopor.png">
+            </div>
+            <div class="card">
+                <p>Metal</p>
+                <img src="Imagens/latinha.png">
+            </div>
+            <div class="card">
+                <p>Oleo</p>
+                <img src="Imagens/oleo.png">
+            </div>
+            <div class="card">  
+                <p>Papel</p>
+                <img src="Imagens/papel.png">
+            </div>
+            <div class="card">
+                <p>Vidro</p>
+                <img src="Imagens/vidro.png">
+            </div>
+        </div>
+        
+        </section>-->
+        <section class="bndesWrapper">
+        <img src="Imagens/bndes_facebook-1024x555.png">
+        <div class="contentWrapper">
+        <h2>O BNDES Multiplica!</h2>
+        <p>
+            O Banco Nacional do Desenvolvimento é conhecido por financiar iniciativas que favoreçam o crescimento economico/social do povo brasileiro e desta vez não é diferente!    
+        
+        </p>
+        <p>
+            O valor referente à cada coleta de material reciclável será replicado 3 vezes pelo banco como investimento em saneamento.    
+        
+        </p>
+        </div>
+        </section>
+        
+        
+        <section id="endWrapper" class="endWrapper">
+        <h2>Posso Participar?</h2>
+        <p><strong>Todos podem, e devem participar.</strong> Não se preocupe, a iniciativa visa conectar todos aqueles que querem participar desse ciclo de mudança! Seja morando em uma comunidade ou não.</p>
+            
+        <div class="buttonWrapper">
+            <a type="button" id="usuario" class="button btn_green" href="#header">Quero fazer parte disso!</a>
+        </div>
+            
+        </section>
+    </main>
+</body>
+    <script>
+        
+    //Código Adaptado da W3Schools
+    //https://www.w3schools.com/howto/howto_css_modals.asp
+        var modal_1 = document.getElementById("modal_usuario");
+        var btn_1 = document.getElementById("usuario");
+        
+        var modal_2 = document.getElementById("modal_empresa");
+        var btn_2 = document.getElementById("empresa");
+        
+        var span_1 = document.getElementsByClassName("modal_close")[0];
+        var span_2 = document.getElementsByClassName("modal_close")[1];
+
+        btn_1.onclick = function() {
+          modal_1.style.display = "flex";
+        }
+        
+        btn_2.onclick = function() {
+          modal_2.style.display = "flex";
+        }
+
+        span_1.onclick = function() {
+          modal_1.style.display = "none";
+        }
+        
+        span_2.onclick = function() {
+          modal_2.style.display = "none";
+        }
+
+
+        window.onclick = function(event) {
+          if (event.target == modal_1 || event.target == modal_2) {
+            modal_1.style.display = "none";
+            modal_2.style.display = "none";
+          }
+        }
+        
+        
+    </script>
+</html>
