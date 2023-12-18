@@ -1,0 +1,36 @@
+version: '3.9'
+services:
+#  composer:
+#    image: composer:2.6.6
+#    tty: true
+#    entrypoint:
+#      - /bin/bash
+#    volumes:
+#      - ./src:/app
+  app:
+    image: recybem-bndes:0.0.1
+    build:
+      context: .
+    ports:
+      - 1000:80
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0.35-bullseye
+    environment:
+      MYSQL_DATABASE: mysql
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD:  mysql
+      MYSQL_ROOT_PASSWORD: mysql
+    ports:
+      - 1002:3306
+
+  adminer:
+    image: adminer:4.8.1
+    ports:
+      - 1001:8080
+    depends_on:
+      - db
